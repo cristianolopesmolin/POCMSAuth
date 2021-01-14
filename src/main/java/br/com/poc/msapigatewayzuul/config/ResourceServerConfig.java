@@ -33,11 +33,14 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests()
+		/*http.authorizeRequests()
 			.antMatchers(PUBLIC).permitAll()
 			.antMatchers(HttpMethod.GET, OPERATOR).hasAnyRole("OPERATOR", "ADMIN")
 			.antMatchers(ADMIN).hasRole("ADMIN")
-			.anyRequest().authenticated();
+			.anyRequest().authenticated();*/
+		
+		http.authorizeRequests()
+			.permitAll();
 		
 		http.cors().configurationSource(corsConfigurationSource());
 	}
