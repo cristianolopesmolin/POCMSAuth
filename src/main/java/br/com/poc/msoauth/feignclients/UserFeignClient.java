@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import br.com.poc.msoauth.model.User;
 
 @Component
-@FeignClient(name = "ms-user", path = "/users")
+@FeignClient(name = "ms-user", path = "/users", url = "https://user-ms-lumini.herokuapp.com")
 public interface UserFeignClient {
 	
 	@GetMapping("/search")
