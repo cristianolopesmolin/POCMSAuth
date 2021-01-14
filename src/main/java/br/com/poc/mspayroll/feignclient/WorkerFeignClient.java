@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import br.com.poc.mspayroll.model.Worker;
 
 @Component
-@FeignClient(name = "ms-worker", path = "workers")
+@FeignClient(name = "ms-worker", path = "workers", url = "https://worker-ms-lumini.herokuapp.com")
 public interface WorkerFeignClient {
 	
 	@GetMapping("/{id}")
